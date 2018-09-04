@@ -1,5 +1,5 @@
 if (isMultiplayer) then {
-	setDate [2015, 10, 06, 5, 0];
+	setDate [2015, 06, 06, 22.5, 0];
 };
 
 ["Initialize", [true]] call BIS_fnc_dynamicGroups;

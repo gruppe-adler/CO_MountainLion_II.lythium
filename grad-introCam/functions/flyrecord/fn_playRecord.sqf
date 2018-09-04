@@ -1,29 +1,33 @@
-private _introHeli2 = "RHS_UH60M_d" createVehicleLocal [8080.6,13585.4,127.648];
+private _introHeli2 = "RHS_MELB_MH6M" createVehicleLocal [8080.6,13585.4,127.648];
 
 // createVehicleCrew _introHeli2;
 
 _introHeli2 engineOn true;
-
+_introHeli2 setPilotLight true;
+player action ["CollisionLightOn", _introHeli2];
 [ _introHeli2, [] call GRAD_introCam_fnc_heli2 ] spawn BIS_fnc_UnitPlay;
 
+sleep 2;
 
-
-private _introHeli = "RHS_UH60M_d" createVehicleLocal [8293.22,13342,120];
+private _introHeli = "RHS_MELB_MH6M" createVehicleLocal [8293.22,13342,120];
 
 // createVehicleCrew _introHeli;
 
 _introHeli engineOn true;
+_introHeli setPilotLight true;
+player action ["CollisionLightOn", _introHeli];
 
-[ _introHeli, [] call GRAD_introCam_fnc_heli, [], false, nil, nil, 4 ] spawn BIS_fnc_UnitPlay;
+[ _introHeli, [] call GRAD_introCam_fnc_heli, []] spawn BIS_fnc_UnitPlay;
 
 
-private _introHeli3 = "RHS_UH60M_d" createVehicleLocal [8375.66,13307.5,120];
+private _introHeli3 = "RHS_MELB_MH6M" createVehicleLocal [8080.6,13585.4,127.648];
 
 // createVehicleCrew _introHeli3;
 
 _introHeli3 engineOn true;
+_introHeli3 setPilotLight true;
 
-[ _introHeli3, [] call GRAD_introCam_fnc_heli3, [], false, nil, nil, 18 ] spawn BIS_fnc_UnitPlay;
+[ _introHeli3, [] call GRAD_introCam_fnc_heli2, []] spawn BIS_fnc_UnitPlay;
 
 
 [_introHeli, _introHeli2, _introHeli3] spawn {

@@ -4,7 +4,7 @@ waitUntil {!isNull player};
 waitUntil {time > 0};
 
 [] spawn GRAD_introCam_fnc_textEffects;
-[] call GRAD_introCam_fnc_playRecord;
+[] spawn GRAD_introCam_fnc_playRecord;
 
 private _shots = missionNamespace getVariable ["GRAD_INTROCAM_SHOTS", []];
 
