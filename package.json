@@ -1,0 +1,8 @@
+{
+  "name": "CO_MountainLion_II.lythium",
+  "version": "0.0.1",
+  "dependencies": {
+    "grad-loadout": "^4.7.2",
+    "grad-factions": "^2.1.0"
+  }
+}

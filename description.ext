@@ -1,0 +1,216 @@
+author = "Nomisum for Gruppe Adler";  //appears as author in overview and loading screen
+
+enableDebugConsole = 1;
+
+respawn = 3;
+respawnDelay = 9999;
+respawnTemplates[] = {"Base"};
+respawnOnStart = -1;//Dont respawn on start.
+respawnDialog = 0;
+respawnButton = 0;
+
+loadScreen = "pic\loading.jpg";
+OnLoadName    = "CO MOUNTAIN LION II";
+OnLoadMission = "US Special Forces going into a liquidation mission.";
+
+class Header
+{
+	gameType = Seize;
+	minPlayers = 15;
+	maxPlayers = 39;
+};
+
+class CfgNotifications
+{
+	// Examples
+	class IntelFound
+	{
+		title = "INTEL FOUND";
+		iconPicture = "\A3\ui_f\data\IGUI\Cfg\simpleTasks\types\search_ca.paa";
+		description = "%1";
+		priority = 7;
+	};
+
+	class SpectatorAscending
+    {
+      title = "New Spectator!"; // Title displayed as text on black background. Filled by arguments.
+      iconPicture = "\A3\ui_f\data\igui\cfg\radar\danger_ca.paa"; // Small icon displayed in left part. Colored by "color", filled by arguments.
+      iconText = ""; // Short text displayed over the icon. Colored by "color", filled by arguments.
+      description = "%1 chose to spectate."; // Brief description displayed as structured text. Colored by "color", filled by arguments.
+      color[] = {1,1,1,1}; // Icon and text color
+      duration = 5; // How many seconds will the notification be displayed
+      priority = 0; // Priority; higher number = more important; tasks in queue are selected by priority
+      difficulty[] = {}; // Required difficulty settings. All listed difficulties has to be enabled
+    };
+
+    class AllSpectators
+    {
+      title = "All Spectators"; // Title displayed as text on black background. Filled by arguments.
+      iconPicture = "\A3\UI_F_MP_Mark\Data\Tasks\Types\meet_ca.paa"; // Small icon displayed in left part. Colored by "color", filled by arguments.
+      iconText = ""; // Short text displayed over the icon. Colored by "color", filled by arguments.
+      description = "%1 chose to spectate."; // Brief description displayed as structured text. Colored by "color", filled by arguments.
+      color[] = {1,1,1,1}; // Icon and text color
+      duration = 5; // How many seconds will the notification be displayed
+      priority = 0; // Priority; higher number = more important; tasks in queue are selected by priority
+      difficulty[] = {}; // Required difficulty settings. All listed difficulties has to be enabled
+    };
+
+    class Default
+    {
+      title = "Info"; // Title displayed as text on black background. Filled by arguments.
+      iconPicture = ""; // Small icon displayed in left part. Colored by "color", filled by arguments.
+      iconText = ""; // Short text displayed over the icon. Colored by "color", filled by arguments.
+      description = "%1"; // Brief description displayed as structured text. Colored by "color", filled by arguments.
+      color[] = {1,1,1,1}; // Icon and text color
+      duration = 5; // How many seconds will the notification be displayed
+      priority = 0; // Priority; higher number = more important; tasks in queue are selected by priority
+      difficulty[] = {}; // Required difficulty settings. All listed difficulties has to be enabled
+    };
+};
+
+class cfgFunctions {
+	#include "node_modules\grad-loadout\cfgFunctions.hpp"
+
+	#include "grad-ambient\cfgFunctions.hpp"
+	#include "grad-introCam\cfgFunctions.hpp"
+	#include "grad-missionControl\cfgFunctions.hpp"
+	#include "grad-civPartisans\cfgFunctions.hpp"
+	#include "grad-herding\cfgFunctions.hpp"
+	#include "grad-permaChoice\cfgFunctions.hpp"
+};
+
+class Loadouts {
+	#define LASERS       // equip weapon laser
+	
+    baseDelay = 1;      // base delay in seconds before applying loadouts on mission start
+    handleRadios = 1;   // radios are handled by grad-loadout
+    resetLoadout = 1;   // start with empty loadouts instead of modifying existing loadout
+
+  	class Faction {
+        #include "node_modules\grad-factions\loadouts.hpp"
+    };
+};
+
+class cfgSounds {
+	#include "grad-herding\cfgSounds.hpp"
+
+	class grad_herding_shout_1
+	{
+	  name="grad_herding_shout_1";
+	  sound[]={"audio\grad_herding_shout_1.ogg", 1.5, 1};
+	  titles[]={};
+	};
+
+	class grad_herding_shout_2
+	{
+	  name="grad_herding_shout_2";
+	  sound[]={"audio\grad_herding_shout_2.ogg", 1.5, 1};
+	  titles[]={};
+	};
+
+	class grad_herding_shout_3
+	{
+	  name="grad_herding_shout_3";
+	  sound[]={"audio\grad_herding_shout_3.ogg", 1.5, 1};
+	  titles[]={};
+	};
+
+	class grad_herding_shout_4
+	{
+	  name="grad_herding_shout_4";
+	  sound[]={"audio\grad_herding_shout_4.ogg", 1.5, 1};
+	  titles[]={};
+	};
+
+	class grad_herding_shout_5
+	{
+	  name="grad_herding_shout_5";
+	  sound[]={"audio\grad_herding_shout_5.ogg", 1.5, 1};
+	  titles[]={};
+	};
+
+	class grad_herding_shout_6
+	{
+	  name="grad_herding_shout_6";
+	  sound[]={"audio\grad_herding_shout_6.ogg", 1.5, 1};
+	  titles[]={};
+	};
+
+	class grad_herding_shout_7
+	{
+	  name="grad_herding_shout_7";
+	  sound[]={"audio\grad_herding_shout_7.ogg", 1.5, 1};
+	  titles[]={};
+	};
+
+	class grad_herding_shout_8
+	{
+	  name="grad_herding_shout_8";
+	  sound[]={"audio\grad_herding_shout_8.ogg", 1.5, 1};
+	  titles[]={};
+	};
+
+	class grad_herding_shout_9
+	{
+	  name="grad_herding_shout_9";
+	  sound[]={"audio\grad_herding_shout_9.ogg", 1.5, 1};
+	  titles[]={};
+	};
+
+	class grad_herding_shout_10
+	{
+	  name="grad_herding_shout_10";
+	  sound[]={"audio\grad_herding_shout_10.ogg", 1.5, 1};
+	  titles[]={};
+	};
+
+	class grad_herding_shout_11
+	{
+	  name="grad_herding_shout_11";
+	  sound[]={"audio\grad_herding_shout_11.ogg", 1.5, 1};
+	  titles[]={};
+	};
+
+	class grad_herding_shout_12
+	{
+	  name="grad_herding_shout_12";
+	  sound[]={"audio\grad_herding_shout_12.ogg", 1.5, 1};
+	  titles[]={};
+	};
+
+	class muezzin
+	{
+	  name="muezzin";
+	  sound[]={"audio\muezzin.ogg", 6, 1};
+	  titles[]={};
+	};
+};
+
+class cfgMusic {
+	class muse_high
+	{
+	  name="muse_high";
+	  sound[]={"audio\muse_high.ogg", 1, 1};
+	  titles[]={};
+	};	
+
+	class crawl
+	{
+	  name="crawl";
+	  sound[]={"audio\crawl.ogg", 1, 1};
+	  titles[]={};
+	};
+};
+
+class CfgIdentities
+{
+	class AlShishani
+	{
+		name		= "Abu Omar al-Shishani";
+		nameSound	= "Abu Omar al-Shishani"; // Arma 3 only!
+		face		= "GreekHead_A3_11";
+		glasses		= "TRYK_Beard_BW2";
+		speaker		= "male03per";
+		pitch		= 0.9;
+	};
+};
