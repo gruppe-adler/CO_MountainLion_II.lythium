@@ -4,7 +4,7 @@ waitUntil {!isNull player};
 waitUntil {time > 0};
 
 [] spawn GRAD_introCam_fnc_textEffects;
-[] spawn GRAD_introCam_fnc_playRecord;
+// [] spawn GRAD_introCam_fnc_playRecord;
 
 private _shots = missionNamespace getVariable ["GRAD_INTROCAM_SHOTS", []];
 
@@ -22,3 +22,5 @@ camDestroy _camera;
 STHud_UIMode = 1;
 
 setViewDistance 4000;
+0 fadeSound 1;
+titleText ["", "BLACK IN", 0];

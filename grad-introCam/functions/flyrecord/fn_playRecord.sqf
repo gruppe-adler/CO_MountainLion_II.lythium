@@ -1,39 +1,45 @@
-private _introHeli2 = "RHS_MELB_MH6M" createVehicleLocal [8080.6,13585.4,127.648];
+/*
+[vehicle player, 120, 30, false, 2] spawn BIS_fnc_UnitCapture;
 
-// createVehicleCrew _introHeli2;
+grad_introCam_fnc_playRecord;
+*/
 
-_introHeli2 engineOn true;
-_introHeli2 setPilotLight true;
-player action ["CollisionLightOn", _introHeli2];
-[ _introHeli2, [] call GRAD_introCam_fnc_heli2 ] spawn BIS_fnc_UnitPlay;
-
-sleep 2;
-
-private _introHeli = "RHS_MELB_MH6M" createVehicleLocal [8293.22,13342,120];
-
-// createVehicleCrew _introHeli;
-
+private _introHeli = "RHS_AH64D_wd" createVehicle [7454.85,13901.7,591.688];
+createVehicleCrew _introHeli;
+(group _introHeli) setBehaviour "CARELESS";
 _introHeli engineOn true;
 _introHeli setPilotLight true;
-player action ["CollisionLightOn", _introHeli];
-
-[ _introHeli, [] call GRAD_introCam_fnc_heli, []] spawn BIS_fnc_UnitPlay;
+(driver _introHeli) action ["CollisionLightOn", _introHeli];
 
 
-private _introHeli3 = "RHS_MELB_MH6M" createVehicleLocal [8080.6,13585.4,127.648];
 
-// createVehicleCrew _introHeli3;
 
+private _introHeli2 = "RHS_MELB_MH6M" createVehicle [7479.66,13845.5,588.862];
+createVehicleCrew _introHeli2;
+(group _introHeli2) setBehaviour "CARELESS";
+_introHeli2 engineOn true;
+_introHeli2 setPilotLight true;
+(driver _introHeli2) action ["CollisionLightOn", _introHeli2];
+
+
+
+private _introHeli3 = "RHS_MELB_MH6M" createVehicle [7444.45,13958.4,594.529];
+createVehicleCrew _introHeli3;
+(group _introHeli3) setBehaviour "CARELESS";
 _introHeli3 engineOn true;
 _introHeli3 setPilotLight true;
+(driver _introHeli3) action ["CollisionLightOn", _introHeli2];
 
-[ _introHeli3, [] call GRAD_introCam_fnc_heli2, []] spawn BIS_fnc_UnitPlay;
 
 
 [_introHeli, _introHeli2, _introHeli3] spawn {
 	params ["_introHeli", "_introHeli2", "_introHeli3"];
 
-	sleep 80;
+	[ _introHeli, [] call GRAD_introCam_fnc_ah64, [], false, nil, nil, 20 ] spawn BIS_fnc_UnitPlay;
+	[ _introHeli2, [] call GRAD_introCam_fnc_heli5, [], false, nil, nil, 20 ] spawn BIS_fnc_UnitPlay;
+	[ _introHeli3, [] call GRAD_introCam_fnc_mh6_2, [], false, nil, nil, 20 ] spawn BIS_fnc_UnitPlay;
+
+	sleep 118;
 
 	_introHeli setvariable ["BIS_fnc_unitPlay_terminate",true];
 	_introHeli2 setvariable ["BIS_fnc_unitPlay_terminate",true];
@@ -50,3 +56,5 @@ _introHeli3 setPilotLight true;
 	deleteVehicle _introHeli3;
 
 };
+
+[_introHeli, _introHeli2, _introHeli3]

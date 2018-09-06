@@ -38,7 +38,7 @@ private _chairs = [
 ];
 
 
-
+/*
 if (!(typeOf player isEqualTo "B_officer_F") && (!(side player isEqualTo civilian))) then {
 	private _myID = player getVariable ["ml_id", 0];
 	private _chair = _chairs select _myID;
@@ -48,6 +48,7 @@ if (!(typeOf player isEqualTo "B_officer_F") && (!(side player isEqualTo civilia
 if (typeOf player isEqualTo "B_officer_F") then {
 	player action ["SwitchWeapon", player, player, 100];
 };
+*/
 
 private _location = createLocation [ "NameLocal" , position intro_march2, 1000, 1000]; 
 _location setText "NATO Basis Kandahar";

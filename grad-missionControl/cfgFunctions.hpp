@@ -23,6 +23,7 @@ class grad_missionControl {
       class fillSupplyBox;
       class getPosInCircle;   
       class isInsideHouse;
+      class ownerShipHandler { postInit = 1; };
       class readIntel;
       class sitDown;
   };

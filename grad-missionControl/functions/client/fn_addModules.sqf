@@ -3,6 +3,28 @@ waitUntil {!isNull player};
 waitUntil {  time > 3 };
 
 {
+
+  
+    _x addEventHandler ["CuratorGroupPlaced", {
+        params ["", "_group"];
+        ["GRAD_missionControl_setServerAsOwner", [_group]] call CBA_fnc_serverEvent;
+    }];
+
+    _x addEventHandler ["CuratorObjectPlaced", {
+        params ["", "_object"];
+        if (_object isKindOf "CAManBase") then {
+            if (count units _object == 1) then {
+                ["GRAD_missionControl_setServerAsOwner", [group _object]] call CBA_fnc_serverEvent;
+            };
+        } else {
+            if (count crew _object > 1) then {
+                ["GRAD_missionControl_setServerAsOwner", [group (crew _object select 0)]] call CBA_fnc_serverEvent;
+            };
+        };
+    }];
+
+
+
   _x addEventHandler ["CuratorWaypointPlaced", {
       params ["_curator", "_group", "_waypointID"];
 

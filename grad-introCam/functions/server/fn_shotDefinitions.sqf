@@ -13,9 +13,12 @@
 
 if (!isServer) exitWith {};
 
+private _helis = [] call GRAD_introCam_fnc_playRecord;
+private _ah64 = _helis select 0;
+
 private _definitions = [
-	["FREE", getPos intro_camPos1, getPos intro_camPos2, intro_camTarget, intro_camTarget, 63.4, 0.4, 0.6, [0,0,20], [0,0,20]],
-	["FREE", getPos intro_camPos2, getPos intro_end, intro_camTarget, intro_billboard, 20, 0.6, 0.2, [0,0,20], [0,0,1]],
+	["FREE", getPos intro_camPos1, getPos intro_camPos2, intro_camTarget, _ah64, 63.4, 0.4, 0.6, [0,0,20], [0,0,20]],
+	["FREE", getPos intro_camPos2, getPos intro_end, _ah64, intro_billboard, 20, 0.6, 0.2, [0,0,20], [0,0,1]],
 	["FREE", getPos intro_end, getPos intro_end, intro_billboard, intro_billboard, 3, 0.2, 0.3, [0,0,1], [0,0,3]],
 	["FREE", getPos intro_end, getPos intro_end2, intro_billboard, intro_billboard, 10, 0.3, 0.4, [0,0,3], [0,0,4]]
 ];

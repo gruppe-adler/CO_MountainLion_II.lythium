@@ -8,6 +8,7 @@ if (isMultiplayer) then {
 	[] spawn GRAD_introCam_fnc_init;
 };
 
+/*
 {
 
 	if (!(typeOf _x isEqualTo "B_Officer_F") && (!(side _x isEqualTo civilian))) then {
@@ -19,3 +20,5 @@ if (isMultiplayer) then {
 	};
 
 } forEach playableUnits + switchableUnits;
+
+*/
