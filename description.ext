@@ -1,3 +1,5 @@
+__EXEC (MISSION_ROOT = __FILE__ select [0, count __FILE__ - 15])
+
 author = "Nomisum for Gruppe Adler";  //appears as author in overview and loading screen
 
 enableDebugConsole = 1;
@@ -68,6 +70,8 @@ class CfgNotifications
     };
 };
 
+#include "grad-gas\data\RscTitles.hpp"
+
 class cfgFunctions {
 	#include "node_modules\grad-loadout\cfgFunctions.hpp"
 
@@ -77,6 +81,8 @@ class cfgFunctions {
 	#include "grad-civPartisans\cfgFunctions.hpp"
 	#include "grad-herding\cfgFunctions.hpp"
 	#include "grad-permaChoice\cfgFunctions.hpp"
+
+    #include "grad-gas\cfgFunctions.hpp"
 };
 
 class Loadouts {
@@ -94,6 +100,7 @@ class Loadouts {
 
 class cfgSounds {
 	#include "grad-herding\cfgSounds.hpp"
+    #include "grad-gas\cfgSounds.hpp"
 
 	class grad_herding_shout_1
 	{
