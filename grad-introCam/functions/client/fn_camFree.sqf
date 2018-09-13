@@ -1,4 +1,4 @@
-params ["_campos1", "_campos2", "_target1", "_target2", "_duration", "_zoom1", "_zoom2", "_offset1", "_offset2"];
+params ["_campos1", "_campos2", "_target1", "_target2", "_duration", "_transition", "_zoom1", "_zoom2", "_offset1", "_offset2"];
 _offset1 params ["_offset1X", "_offset1Y", "_offset1Z"];
 _offset2 params ["_offset2X", "_offset2Y", "_offset2Z"];
 
