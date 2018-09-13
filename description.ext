@@ -24,6 +24,17 @@ class Header
 
 class CfgNotifications
 {
+
+    class LoadoutChanged
+    {
+        title = "LOADOUT CHANGED";
+        iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIconDone_ca.paa";
+        description = "%1";
+        priority = 7;
+        color[]={0.69999999,1,0.30000001,1};
+        sound="taskSucceeded";
+    };
+
 	// Examples
 	class IntelFound
 	{
@@ -83,6 +94,7 @@ class cfgFunctions {
 	#include "grad-permaChoice\cfgFunctions.hpp"
 
     #include "grad-gas\cfgFunctions.hpp"
+    #include "grad-customLoadout\cfgFunctions.hpp"
 };
 
 class Loadouts {

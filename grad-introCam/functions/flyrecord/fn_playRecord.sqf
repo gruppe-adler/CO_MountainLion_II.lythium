@@ -9,6 +9,7 @@ createVehicleCrew _introHeli;
 (group _introHeli) setBehaviour "CARELESS";
 _introHeli engineOn true;
 _introHeli setPilotLight true;
+_introHeli setCaptive true;
 (driver _introHeli) action ["CollisionLightOn", _introHeli];
 
 
@@ -19,6 +20,7 @@ createVehicleCrew _introHeli2;
 (group _introHeli2) setBehaviour "CARELESS";
 _introHeli2 engineOn true;
 _introHeli2 setPilotLight true;
+_introHeli2 setCaptive true;
 (driver _introHeli2) action ["CollisionLightOn", _introHeli2];
 
 
@@ -28,16 +30,17 @@ createVehicleCrew _introHeli3;
 (group _introHeli3) setBehaviour "CARELESS";
 _introHeli3 engineOn true;
 _introHeli3 setPilotLight true;
-(driver _introHeli3) action ["CollisionLightOn", _introHeli2];
+_introHeli3 setCaptive true;
+(driver _introHeli3) action ["CollisionLightOn", _introHeli3];
 
 
 
 [_introHeli, _introHeli2, _introHeli3] spawn {
 	params ["_introHeli", "_introHeli2", "_introHeli3"];
 
-	[ _introHeli, [] call GRAD_introCam_fnc_ah64, [], false, nil, nil, 20 ] spawn BIS_fnc_UnitPlay;
-	[ _introHeli2, [] call GRAD_introCam_fnc_heli5, [], false, nil, nil, 20 ] spawn BIS_fnc_UnitPlay;
-	[ _introHeli3, [] call GRAD_introCam_fnc_mh6_2, [], false, nil, nil, 20 ] spawn BIS_fnc_UnitPlay;
+	[ _introHeli, [] call GRAD_introCam_fnc_ah64, [], false, nil, nil, 15 ] spawn BIS_fnc_UnitPlay;
+	[ _introHeli2, [] call GRAD_introCam_fnc_heli5, [], false, nil, nil, 15 ] spawn BIS_fnc_UnitPlay;
+	[ _introHeli3, [] call GRAD_introCam_fnc_mh6_2, [], false, nil, nil, 15 ] spawn BIS_fnc_UnitPlay;
 
 	sleep 118;
 

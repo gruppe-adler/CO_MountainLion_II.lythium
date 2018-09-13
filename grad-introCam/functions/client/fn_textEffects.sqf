@@ -13,7 +13,7 @@ _introPicBlack ctrlSetPosition [
  	safeZoneW,  
  	safezoneH
 ];
-_introPicBlack ctrlsetText "pic\intro.paa";
+_introPicBlack ctrlsetText "pic\intro2.paa";
 _introPicBlack ctrlCommit 0;
 
 sleep 25;
@@ -25,7 +25,7 @@ _introPicWhite ctrlSetPosition [
  	safeZoneW,  
  	safezoneH
 ];
-_introPicWhite ctrlsetText "pic\intro_white.paa";
+_introPicWhite ctrlsetText "pic\intro_white2.paa";
 _introPicWhite ctrlsetFade 1;
 _introPicWhite ctrlCommit 0;
 
@@ -55,6 +55,7 @@ sleep 40;
 [ "B R I E F I N G", "27.08.2018" ] spawn BIS_fnc_infoText;
 
 10 fadeMusic 0;
+10 fadeSound 0;
 
 sleep 10;
 

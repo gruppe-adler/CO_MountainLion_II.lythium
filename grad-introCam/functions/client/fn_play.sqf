@@ -22,5 +22,5 @@ camDestroy _camera;
 STHud_UIMode = 1;
 
 setViewDistance 4000;
-0 fadeSound 1;
+10 fadeSound 1;
 titleText ["", "BLACK IN", 0];
