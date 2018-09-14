@@ -27,9 +27,9 @@ private _protectingGoggles = [
     _args params ["_coughs", "_gas_breathing", "_protectingGoggles", "_pos", "_distance"];
     
 
-    if (!alive player) exitWith { 
-    	[_handle] call CBA_fnc_removePerFrameHandler;
+    if (!alive player || missionNamespace getVariable ["grad_gas_leakClosed", false]) exitWith {
     	[] call grad_gas_fnc_gasEffectsReset;
+    	[_handle] call CBA_fnc_removePerFrameHandler;
     };
 
 	if (player getvariable ["isSpectator", "false"] == "true") exitWith {};
@@ -38,10 +38,10 @@ private _protectingGoggles = [
 	if ((goggles player) in _protectingGoggles) then {
 			cutRsc ["RscGasmaskPicture","PLAIN"];
 
-			if (player getVariable ["suomen_gas_isGasEffected", false]) then {
-				player setVariable ["suomen_gas_isGasEffected", false];
+			if (player getVariable ["grad_gas_isGasEffected", false]) then {
+				player setVariable ["grad_gas_isGasEffected", false];
 				player setVariable ["GRAD_gas_insideCounter",0];
-				[] call suomen_fx_fnc_gasEffectsReset;
+				[] call grad_fx_fnc_gasEffectsReset;
 			};
 			
 		
@@ -67,7 +67,7 @@ private _protectingGoggles = [
 
 			if (player distance _pos < _distance) then {
 
-				player setVariable ["suomen_gas_isGasEffected", true];
+				player setVariable ["grad_gas_isGasEffected", true];
 
 				GAS_EFFECTED = GAS_EFFECTED + 1;
 				publicVariableServer "GAS_EFFECTED";

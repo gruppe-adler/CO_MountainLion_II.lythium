@@ -2,6 +2,8 @@ params ["_obj", "_angle"];
 
 private ["_gasLeak", "_gasClouds", "_root", "_radius"];
 
+[_obj, 5] call GRAD_gas_fnc_addAction;
+
 _radius = 15;
 
 /*
