@@ -8,4 +8,10 @@ class grad_gas {
             class gasEffectsReset;
             class gasLeak;
     };
+
+    class server {
+            file = grad-gas\server;
+
+            class explode;
+    };
 };

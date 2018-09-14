@@ -33,5 +33,6 @@ _camera camCommitPrepared 0;
 _camera camPreparePos _campos2;
 _camera camPrepareTarget _target2;
 _camera camPrepareFOV _zoom2;
+
 _camera camCommitPrepared _duration;
 sleep _duration;

@@ -2,6 +2,13 @@
 // if (didJIP) exitWith {};
 waitUntil {!isNull player};
 waitUntil {time > 0};
+preloadCamera (position muezzin);
+
+private _viewDistanceCache = viewDistance;
+private _objectViewDistanceCache = getObjectViewDistance;
+
+setViewDistance 8000;
+setObjectViewDistance [4000,200];
 
 [] spawn GRAD_introCam_fnc_textEffects;
 // [] spawn GRAD_introCam_fnc_playRecord;
@@ -21,6 +28,8 @@ camDestroy _camera;
 
 STHud_UIMode = 1;
 
-setViewDistance 4000;
+setViewDistance _viewDistanceCache;
+setObjectViewDistance _objectViewDistanceCache;
 10 fadeSound 1;
 titleText ["", "BLACK IN", 0];
+

@@ -4,7 +4,7 @@ private ["_gasLeak", "_gasClouds", "_root", "_radius"];
 
 [_obj, 5] call GRAD_gas_fnc_addAction;
 
-_radius = 15;
+_radius = 7;
 
 /*
 _gasLeak = "#particlesource" createVehicleLocal _pos; 
@@ -50,7 +50,7 @@ private _root = parsingNamespace getVariable "MISSION_ROOT";
 	_obj say3D ["steam", 30];	
 
 
-    if (false) exitWith {
+    if (missionNamespace getVariable ["grad_gas_leakClosed", false]) exitWith {
     	deleteVehicle _gasLeak;
     	deleteVehicle _gasClouds;
     	[_handle] call CBA_fnc_removePerFrameHandler;

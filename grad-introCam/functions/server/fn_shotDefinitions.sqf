@@ -18,8 +18,8 @@ private _ah64 = _helis select 0;
 
 private _definitions = [
 	["FREE", getPos intro_camPos1, getPos intro_camPos2, intro_camTarget, _ah64, 63.4, 0, 0.4, 0.6, [0,0,20], [0,2,20]],
-	["FREE", getPos intro_camPos2, getPos ml_mosque, _ah64, muezzin, 10, 2, 0.6, 0.4, [0,2,20], [0,20,20]],
-	["FREE", getPos ml_mosque, getPos intro_end, muezzin, intro_billboard, 13, 2, 0.4, 0.3, [0,20,20], [0,1,3]],
+	["FREE", getPos intro_camPos2, getPos ml_mosque, _ah64, muezzin, 10, 2, 0.6, 0.4, [0,2,20], [0,-20,20]],
+	["FREE", getPos ml_mosque, getPos intro_end, muezzin, intro_billboard, 13, 2, 0.4, 0.3, [0,-20,20], [0,1,3]],
 	["FREE", getPos intro_end, getPos intro_end2, intro_billboard, intro_billboard, 10, 2, 0.3, 0.4, [0,1,3], [0,0,4]]
 ];
 
