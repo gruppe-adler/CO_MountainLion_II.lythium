@@ -41,7 +41,7 @@ _val_fum = "#particlesource" createVehicleLocal getPosATL _jdam_bomb;
 _val_fum setParticleCircle [_size_rad/2, [10,10,0]];
 _val_fum setParticleRandom [3,[0,0,30],[-60,-60,10],0,0.5,[0, 0, 0, 0.1],1,0];
 _val_fum setParticleParams [["\A3\data_f\ParticleEffects\Universal\Universal_02.p3d",8,0,24,1], "", "Billboard", 1, 6, [0,0,25],[0,0,0],5,30,7,0.1, [30,40,50], [[0, 0, 0, 1],[0.349,0.231,0.122,0.5],[0.349,0.231,0.122,0]], [1], 1, 0, "", "",_jdam_bomb];
-_val_fum setDropInterval 0.0001;
+_val_fum setDropInterval 0.01; // 0.0001
 [_val_fum] spawn {_de_sters_v = _this select 0;sleep 2;deleteVehicle _de_sters_v};
 
 [_jdam_bomb] spawn {
@@ -64,7 +64,7 @@ _scantei = "#particlesource" createVehicleLocal getPosATL _jdam_bomb;
 _scantei setParticleCircle [_size_rad/2, [0, 0, 10]];
 _scantei setParticleRandom [4, [1,1,0], [30,20,80], 0, 0.25, [0, 0, 0,1], 0, 0];
 _scantei setParticleParams [["\A3\data_f\cl_exp", 1, 0, 1], "", "Billboard", 1,3,[0, 0, 0], [0,0,20],0,200,5,0, [1.5, 1.5, 0.5], [[1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1]], [0.08], 1, 0, "", "", _jdam_bomb];
-_scantei setDropInterval 0.001;	
+_scantei setDropInterval 0.01;	
 [_scantei] spawn {_de_sters = _this select 0;sleep 0.3;deleteVehicle _de_sters};
 
 sleep 0.5;

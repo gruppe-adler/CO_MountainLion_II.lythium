@@ -6,8 +6,7 @@ if (isMultiplayer) then {
 };
 
 enableSentences false;
-["BLU_F", "SOGBlack"] call GRAD_Loadout_fnc_FactionSetLoadout;
+["BLU_F", "USOCP"] call GRAD_Loadout_fnc_FactionSetLoadout;
 ["OPF_F", "Taliban"] call GRAD_Loadout_fnc_FactionSetLoadout;
-call compile preprocessFileLineNumbers "Engima\Traffic\Init.sqf";
 
-setViewDistance 8000;
+call compile preprocessFileLineNumbers "Engima\Traffic\Init.sqf";

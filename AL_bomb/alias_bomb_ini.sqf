@@ -46,8 +46,10 @@ if (al_destruction) then
 		_poz_destr = _this select 0;
 		_veget = nearestTerrainObjects [position _poz_destr, ["TREE","SMALL TREE","BUSH"],1.5*size_b];
 		_build = nearestObjects [position _poz_destr,["building"],1.5*size_b];
+		_thing = nearestObjects [position _poz_destr,["thing"],2.5*size_b];
 		_misce = nearestObjects [position _poz_destr,["man","car","tank","plane","helicopter"],1.5*size_b];
 		{if !(_x isKindOf "Land_HelipadEmpty_F") then {_x setVelocity [0,0,30+random 30]; _x setdamage 1};sleep 0.01} foreach _misce;
+		{if !(_x isKindOf "Land_HelipadEmpty_F") then {deleteVehicle _x; sleep 0.01}} foreach _thing;		
 		{if !(_x isKindOf "Land_HelipadEmpty_F") then {hideObjectGlobal _x; sleep 0.01}} foreach _build;		
 		{_x setDamage 1; sleep 0.01} foreach _veget;
 	};
