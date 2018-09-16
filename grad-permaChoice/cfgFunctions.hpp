@@ -5,6 +5,7 @@ class grad_permaChoice {
 
       class addEventhandler {preInit = 1;};
       class addZeusModules;
+      class confirmPerma;
       class forceRespawn;
       class onPlayerKilled;
       class onPlayerRespawn;

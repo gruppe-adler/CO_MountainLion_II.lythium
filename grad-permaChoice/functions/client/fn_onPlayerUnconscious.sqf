@@ -27,7 +27,7 @@ if _state then {
     _mouseOverArea ctrlSetBackgroundColor [0,0,0,0.01];
     _mouseOverArea ctrlCommit 0;
 
-    _mouseOverArea ctrlAddEventHandler ["ButtonClick", "closeDialog 0; player setDamage 1; [] call grad_permaChoice_fnc_setPlayerSpectator;"];
+    _mouseOverArea ctrlAddEventHandler ["ButtonClick", "[] spawn grad_permaChoice_fnc_confirmPerma;"];
 
     _mouseOverArea ctrlAddEventHandler ["MouseEnter",{
         private _icon = uiNamespace getVariable ["grad_permaChoice_icon", controlNull];

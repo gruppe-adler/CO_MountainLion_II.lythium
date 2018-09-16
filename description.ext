@@ -81,6 +81,12 @@ class CfgNotifications
     };
 };
 
+class Extended_PreInit_EventHandlers {
+    class diwako_ragdoll {
+        init = "call compile preprocessFileLineNumbers 'diwako\ragdoll\cba_settings.sqf'";
+    };
+};
+
 #include "grad-gas\data\RscTitles.hpp"
 
 class cfgFunctions {
@@ -95,6 +101,15 @@ class cfgFunctions {
 
     #include "grad-gas\cfgFunctions.hpp"
     #include "grad-customLoadout\cfgFunctions.hpp"
+
+    class diwako_ragdoll {
+        tag="diwako_ragdoll";
+        class functions {
+            file = "diwako\ragdoll";
+            class initRagdoll{};
+            class animChangedEH{};
+        };
+    };
 };
 
 class Loadouts {

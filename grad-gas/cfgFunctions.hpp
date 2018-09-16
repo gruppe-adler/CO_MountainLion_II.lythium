@@ -4,6 +4,10 @@ class grad_gas {
             file = grad-gas\client;
 
             class addAction;
+            class createFire;
+            class createLingerEmitter;
+            class createWashEmitter;
+            class explosionClient;
             class gasEffectsAdd;
             class gasEffectsReset;
             class gasLeak;
@@ -12,6 +16,6 @@ class grad_gas {
     class server {
             file = grad-gas\server;
 
-            class explode;
+            class explosionServer;
     };
 };
