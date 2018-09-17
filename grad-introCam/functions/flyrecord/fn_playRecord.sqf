@@ -42,17 +42,23 @@ _introHeli3 setCaptive true;
 	[ _introHeli2, [] call GRAD_introCam_fnc_heli5, [], false, nil, nil, 15 ] spawn BIS_fnc_UnitPlay;
 	[ _introHeli3, [] call GRAD_introCam_fnc_mh6_2, [], false, nil, nil, 15 ] spawn BIS_fnc_UnitPlay;
 
-	sleep 118;
+	sleep 110;
 
 	_introHeli setvariable ["BIS_fnc_unitPlay_terminate",true];
 	_introHeli2 setvariable ["BIS_fnc_unitPlay_terminate",true];
 	_introHeli3 setvariable ["BIS_fnc_unitPlay_terminate",true];
 
-	/*
+	
+	_introHeli moveTo [worldSize,0,100];
+	_introHeli2 moveTo [worldSize,100,100];
+	_introHeli3 moveTo [worldSize,200,100];
+
+	sleep 120;
+
 	{_introHeli deleteVehicleCrew _x} forEach crew _introHeli;
 	{_introHeli2 deleteVehicleCrew _x} forEach crew _introHeli2;
 	{_introHeli3 deleteVehicleCrew _x} forEach crew _introHeli3;
-	*/
+	
 
 	deleteVehicle _introHeli;
 	deleteVehicle _introHeli2;

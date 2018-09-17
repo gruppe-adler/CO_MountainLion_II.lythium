@@ -11,7 +11,7 @@ respawnOnStart = -1;//Dont respawn on start.
 respawnDialog = 0;
 respawnButton = 0;
 
-loadScreen = "pic\loading.jpg";
+loadScreen = "pic\loading2.jpg";
 OnLoadName    = "CO MOUNTAIN LION II";
 OnLoadMission = "US Special Forces going into a liquidation mission.";
 

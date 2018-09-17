@@ -18,6 +18,8 @@
 /*
 [_x, [0,0,0], 300 + random 50, .0005, .5]
 _attachToObj,_relPos,_timeout,_effectSize,_fireDamage 
+
+[_x, [0,0,0], 300 + random 50, .0005, .5]
 */
 
 params ["_attachToObj", "_offset", "_timeout", "_effectSize", "_damage"];
@@ -25,8 +27,8 @@ params ["_attachToObj", "_offset", "_timeout", "_effectSize", "_damage"];
 _emitter = "#particlesource" createVehicleLocal [0,0,0];
 
 private _colorRed = 0.5;
-private _colorGreen = 0.5;
-private _colorBlue = 0.5;
+private _colorGreen = 0.2;
+private _colorBlue = 0.2;
 private _particleLifeTime = 2;
 private _particleDensity = 25;
 private _particleSize = 1;
@@ -57,18 +59,12 @@ _light = createVehicle ["#lightpoint", (getPos _attachToObj), [], 0, "CAN_COLLID
 _light lightAttachObject [_attachToObj, [0,0,0]];
 _light setLightColor [1,0.65,0.4];
 _light setLightDayLight false;
-_light setLightFlareMaxDistance 200; 
-if (_effectSize >= .09) then
-{
-    _light setLightFlareSize 3;  // flareSize 50 makes awesome heavenly light ball
-    _light setLightAttenuation [2,0,0,4.31918e-005]; 
-    _light setLightIntensity 30; 
-} else
-{
-    _light setLightFlareSize 2;  // flareSize 50 makes awesome heavenly light ball
-    _light setLightAttenuation [1,0,0,0]; 
-    _light setLightIntensity 20; 
-};
+_light setLightFlareMaxDistance 500;
+
+_light setLightFlareSize 50;  // 2 // flareSize 50 makes awesome heavenly light ball
+_light setLightAttenuation [/*start*/ 0, /*constant*/0, /*linear*/ 0, /*quadratic*/ 0, /*hardlimitstart*/0.5,800]; // [1,0,0,0]
+_light setLightIntensity 100;  // 20
+
 
 // SMOKE
 //--- variables set by user

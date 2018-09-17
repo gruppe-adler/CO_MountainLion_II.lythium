@@ -5,6 +5,7 @@ class grad_gas {
 
             class addAction;
             class createFire;
+            class createGlow;
             class createLingerEmitter;
             class createWashEmitter;
             class explosionClient;

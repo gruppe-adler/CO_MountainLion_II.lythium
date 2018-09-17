@@ -5,8 +5,8 @@
 params ["_destructionCenter", "_radius"];
 
 
-[_destructionCenter, 300, 40] spawn GRAD_gas_fnc_createLingerEmitter;
-[_destructionCenter, 60] spawn GRAD_gas_fnc_createWashEmitter;
+[_destructionCenter, 900, 40] spawn GRAD_gas_fnc_createLingerEmitter;
+[_destructionCenter, 300] spawn GRAD_gas_fnc_createWashEmitter;
 
 
 //lumina

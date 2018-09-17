@@ -5,5 +5,6 @@ class grad_customLoadout {
 
       class addEquipAction;
       class equipABCstuff;
+      class fillMedevac;
   };
 };

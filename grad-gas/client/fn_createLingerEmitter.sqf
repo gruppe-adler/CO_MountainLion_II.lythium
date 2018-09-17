@@ -9,7 +9,7 @@ params ["_position", ["_lifetime", 300], ["_size",10], ["_rgb", [0.3,0.25,0.2]],
 _rgb params ["_colorR", "_colorG", "_colorB"];
 
 private _interval = 0.01;
-private _duration = 0.1;
+private _duration = 1;
 
 private _grad_linger = "#particlesource" createVehicleLocal _position;
 
@@ -26,25 +26,25 @@ _grad_linger setParticleParams [
 		 [
 		 	
 		 	[_colorR, _colorG, _colorB, 0],
-		 	[_colorR, _colorG, _colorB, 0.3],
-		 	[_colorR, _colorG, _colorB, 0.25],
-		 	[_colorR, _colorG, _colorB, 0.2],
-		 	[_colorR, _colorG, _colorB, 0.15],
-		 	[_colorR, _colorG, _colorB, 0.14],
-		 	[_colorR, _colorG, _colorB, 0.13],
-		 	[_colorR, _colorG, _colorB, 0.12],
-		 	[_colorR, _colorG, _colorB, 0.11],
-		 	[_colorR, _colorG, _colorB, 0.10],
+		 	[_colorR, _colorG, _colorB, 0.1],
+		 	[_colorR, _colorG, _colorB, 0.09],
+		 	[_colorR, _colorG, _colorB, 0.08],
 		 	[_colorR, _colorG, _colorB, 0.07],
+		 	[_colorR, _colorG, _colorB, 0.06],
+		 	[_colorR, _colorG, _colorB, 0.05],
+		 	[_colorR, _colorG, _colorB, 0.04],
 		 	[_colorR, _colorG, _colorB, 0.03],
+		 	[_colorR, _colorG, _colorB, 0.02],
 		 	[_colorR, _colorG, _colorB, 0.01],
+		 	[_colorR, _colorG, _colorB, 0.005],
+		 	[_colorR, _colorG, _colorB, 0.0025],
 		 	[_colorR, _colorG, _colorB, 0]
 		 ], 
 		 [0.08], 0, 0, "", "", _grad_linger];
 
 
 _grad_linger setParticleRandom
-/*LifeTime*/		[0,
+/*LifeTime*/		[5,
 /*Position*/		[_size, _size, 0],
 /*MoveVelocity*/	[0,0,0],
 /*rotationVel*/		0,

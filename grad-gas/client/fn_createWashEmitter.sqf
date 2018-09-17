@@ -1,4 +1,4 @@
-params ["_position", "_lifetime", ["_intensity",5], ["_uplift", 1.1], ["_rgb", [0.2,0.15,0.1]], ["_transparency",1]];
+params ["_position", "_lifetime", ["_intensity",5], ["_uplift", 0.005], ["_rgb", [0.1,0.05,0.025]], ["_transparency",1]];
 _rgb params ["_colorR", "_colorG", "_colorB"];
 
 private _grad_dust = "#particlesource" createVehicleLocal _position; 
@@ -12,7 +12,7 @@ _grad_dust setParticleParams [
 		["\A3\data_f\cl_basic", 1, 0, 1],
 		 "", "Billboard", 1, _lifetime, 
 		 [0, 0, 0], 
-		 [0, 0, 0.1], 0.3, 
+		 [0, 0, _uplift], 0.3, 
 		 10,
 		 8,
 		 0.001,
