@@ -178,10 +178,10 @@ class cfgMusic {
 	  titles[]={};
 	};	
 
-	class crawl
+	class openingbook
 	{
-	  name="crawl";
-	  sound[]={"audio\crawl.ogg", 1, 1};
+	  name="openingbook";
+	  sound[]={"audio\openingbook.ogg", 1, 1};
 	  titles[]={};
 	};
 };

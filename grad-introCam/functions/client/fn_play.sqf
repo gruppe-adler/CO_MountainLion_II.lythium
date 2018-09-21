@@ -2,7 +2,6 @@
 // if (didJIP) exitWith {};
 waitUntil {!isNull player};
 waitUntil {time > 0};
-preloadCamera (position muezzin);
 
 if (isMultiplayer) then {
 

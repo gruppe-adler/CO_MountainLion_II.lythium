@@ -26,7 +26,7 @@ _secondary setDamage 1;
 /*
 destroy nearest things / throw them in the air
 */
-[_destructionCenter, _radius] remoteExec ["GRAD_gas_fnc_explosionClient", [0,-2] select isDedicated];
+[_obj, _destructionCenter, _radius] remoteExec ["GRAD_gas_fnc_explosionClient", [0,-2] select isDedicated];
 
 [_destructionCenter, _radius, _deleteEverything] spawn {
     params ["_destructionCenter", "_radius", "_deleteEverything"];

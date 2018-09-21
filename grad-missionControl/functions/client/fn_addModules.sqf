@@ -83,13 +83,13 @@ if (
 
   }] call Ares_fnc_RegisterCustomModule;
 
-  ["ZEUS HELPERS", "Crawl Music",
+  ["ZEUS HELPERS", "openingbook Music",
   {
     // Get all the passed parameters
     params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
 
     [5, 1] remoteExec ["fadeMusic"];
-    ["crawl"] remoteExec ["playMusic"];
+    ["openingbook"] remoteExec ["playMusic"];
 
   }] call Ares_fnc_RegisterCustomModule;
 

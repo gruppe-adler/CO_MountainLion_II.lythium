@@ -39,8 +39,8 @@ _parameters = [
 			"RHS_Ural_Civ_02",
 			"RHS_Ural_Open_Civ_02"
 	]],
-	["VEHICLES_COUNT", 15],
-	["MAX_GROUPS_COUNT", 20],
+	["VEHICLES_COUNT", 8],
+	["MAX_GROUPS_COUNT", 15],
 	["MIN_SPAWN_DISTANCE", 1500],
 	["MAX_SPAWN_DISTANCE", 2000],
 	["MIN_SKILL", 0],

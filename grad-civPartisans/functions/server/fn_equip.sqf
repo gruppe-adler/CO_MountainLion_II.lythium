@@ -89,5 +89,3 @@ if (_armed) then {
 } else {
 	_unit setUnitLoadout [[],[],[],[_uniform,[]],[],[],_headgear,_beard,[],["","","","","",""]];
 };
-
-_unit enableDynamicSimulation true;

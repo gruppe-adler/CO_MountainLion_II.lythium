@@ -2,8 +2,9 @@
     rewritten version of aliascartoons jdam 
 */
 
-params ["_destructionCenter", "_radius"];
+params ["_obj", "_destructionCenter", "_radius"];
 
+_obj say3D ["bombix", 1000];
 
 [_destructionCenter, 900, 40] spawn GRAD_gas_fnc_createLingerEmitter;
 [_destructionCenter, 300] spawn GRAD_gas_fnc_createWashEmitter;

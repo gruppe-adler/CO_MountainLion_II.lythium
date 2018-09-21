@@ -3,6 +3,10 @@ _location setText "NATO Basis Kandahar";
 
 
 STHud_UIMode = 0;
+
+preloadCamera (position muezzin);
+preloadCamera (position intro_billboard);
+
 ["InitializePlayer", [player, true]] call BIS_fnc_dynamicGroups;
 player addEventHandler ["HandleRating", {0}];
 

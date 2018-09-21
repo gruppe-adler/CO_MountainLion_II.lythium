@@ -48,10 +48,9 @@ _introHeli3 setCaptive true;
 	_introHeli2 setvariable ["BIS_fnc_unitPlay_terminate",true];
 	_introHeli3 setvariable ["BIS_fnc_unitPlay_terminate",true];
 
-	
-	_introHeli moveTo [worldSize,0,100];
-	_introHeli2 moveTo [worldSize,100,100];
-	_introHeli3 moveTo [worldSize,200,100];
+	(group _introHeli) addWaypoint [[worldSize,0,100], 0];
+	(group _introHeli2) addWaypoint [[worldSize,100,100], 0];
+	(group _introHeli3) addWaypoint [[worldSize,200,100], 0];
 
 	sleep 120;
 

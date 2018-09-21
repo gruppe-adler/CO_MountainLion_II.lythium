@@ -13,5 +13,3 @@ params ["_vehicle", "_group"];
 { 
 	[_x, false] call GRAD_civPartisans_fnc_equip;
 } forEach units _group;
-
-_vehicle enableDynamicSimulation true;
