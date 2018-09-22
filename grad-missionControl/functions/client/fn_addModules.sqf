@@ -20,6 +20,8 @@ waitUntil {  time > 3 };
             _x setSkill ["commanding", 1];
             _x setSkill ["general", 1];
 
+            [_x] call GRAD_missionControl_fnc_addApacheDestruction;
+
         } forEach units _group;
     }];
 
@@ -42,6 +44,7 @@ waitUntil {  time > 3 };
         if (_object isKindOf "CAManBase") then {
             if (count units _object == 1) then {
                 ["GRAD_missionControl_setServerAsOwner", [group _object]] call CBA_fnc_serverEvent;
+                [_object] call GRAD_missionControl_fnc_addApacheDestruction;
             };
         } else {
             if (count crew _object > 1) then {

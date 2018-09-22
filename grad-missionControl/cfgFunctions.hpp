@@ -4,6 +4,7 @@ class grad_missionControl {
 		  file = grad-missionControl\functions\client;
 
       class addModules;
+      class createBloodEffect;
       class setMyFrequency;
       class setGroupFrequencies;
       class stopMusic;
@@ -12,6 +13,7 @@ class grad_missionControl {
 	class server {
 		  file = grad-missionControl\functions\server;
 
+      class addApacheDestruction;
       class addIntel;
       class alertUnits;
       class createChairCircle;
