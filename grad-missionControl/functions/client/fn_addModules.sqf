@@ -254,7 +254,7 @@ if (
     params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
 
     
-    private _count =count (playableUnits + switchableUnits);
+    private _count = count (playableUnits + switchableUnits) + 1;
     
     // possible chairs
     private _chairs = ["Land_CampingChair_V1_F", _position, _count] call GRAD_missionControl_fnc_createChairCircle;
