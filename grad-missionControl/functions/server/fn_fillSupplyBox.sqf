@@ -3,7 +3,7 @@ params ["_box"];
 if (!isServer) exitWith {};
 
 // default mags
-_box addMagazineCargoGlobal ["30Rnd_556x45_Stanag", 100];
+_box addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", 100];
 
 // AT
 _box addMagazineCargoGlobal ["rhs_mag_maaws_HEDP", 5];
@@ -11,7 +11,8 @@ _box addMagazineCargoGlobal ["rhs_mag_maaws_HE", 5];
 _box addMagazineCargoGlobal ["rhs_mag_maaws_HEAT", 5];
 
 // MG
-_box addMagazineCargoGlobal ["rhs_200rnd_556x45_M_SAW", 20];
+_box addMagazineCargoGlobal ["rhsusf_100Rnd_762x51_m62_tracer", 20];
+_box addMagazineCargoGlobal ["rhsusf_100Rnd_556x45_soft_pouch", 20];
 
 
 // pilot MP
