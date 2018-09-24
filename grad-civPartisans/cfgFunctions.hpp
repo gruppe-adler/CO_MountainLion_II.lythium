@@ -9,8 +9,10 @@ class grad_civPartisans {
 	class server {
 		  file = grad-civPartisans\functions\server;
 
+      class addKilledEH;
       class equip;
       class equipTraffic;
       class leafLets;
+
   };
 };

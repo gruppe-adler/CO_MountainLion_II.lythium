@@ -2,6 +2,7 @@
 // if (didJIP) exitWith {};
 waitUntil {!isNull player};
 waitUntil {time > 0};
+player setVariable ["tf_voiceVolume", 0, true];
 
 if (isMultiplayer) then {
 
@@ -48,4 +49,4 @@ setViewDistance _viewDistanceCache;
 setObjectViewDistance _objectViewDistanceCache;
 10 fadeSound 1;
 titleText ["", "BLACK IN", 0];
-
+player setVariable ["tf_voiceVolume", 1, true];

@@ -1,8 +1,8 @@
-params ["_object", "_duration"];
+params ["_object", "_duration", ["_actionName", "Search"]];
 
 [
 	_object,											// Object the action is attached to
-	"Search",										// Title of the action
+	_actionName,										// Title of the action
 	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa",	// Idle icon shown on screen
 	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa",	// Progress icon shown on screen
 	"_this distance _target < 3",						// Condition for the action to be shown

@@ -20,10 +20,12 @@ _unit addEventHandler ["Killed", {
 
     if (!(_unit getVariable ["ML_isVaporized", false])) then {
         private _intel = "";
-        if (random 9 > 10) then {
+        if (random 10 > 9) then {
             private _currentIntelCount = missionNamespace getVariable ["ML_intelCount", 0];
             missionNamespace setVariable ["ML_intelCount", _currentIntelCount + 1, true];
             _intel = selectRandom ["<img image='pic\intel_i.jpg' />", "<img image='pic\intel_ii.jpg' />", "<img image='pic\intel_iii.jpg' />"];
+
+            diag_log format ["adding intel number %1", (_currentIntelCount + 1)];
         };
 
         [_unit, _intel, 5] call GRAD_missionControl_fnc_addIntel;

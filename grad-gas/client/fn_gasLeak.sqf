@@ -1,8 +1,6 @@
 params ["_obj", "_angle"];
 
-private ["_gasLeak", "_gasClouds", "_root", "_radius"];
-
-[_obj, 5] call GRAD_gas_fnc_addAction;
+private ["_gasLeak", "_gasClouds", "_radius"];
 
 _radius = 7;
 
@@ -27,7 +25,7 @@ private _speed = 1;
 private _vector = [(sin _dir*_speed),(cos _dir*_speed), 0];
 
 _gasLeak = "#particlesource" createVehicleLocal [_pos select 0, _pos select 1, 0.5]; 
-_gasLeak setParticleParams [["\A3\data_f\ParticleEffects\Universal\Refract",1,0,1], "", "Billboard", 1, 2, [0, 0, 0.3],
+_gasLeak setParticleParams [["\A3\data_f\ParticleEffects\Universal\Refract",1,0,1], "", "Billboard", 1, 2, [0, 0.2, 0.4],
  _vector, 0, 10, 7.9, 0.075, [0.01, 0.01, 0.1, 0.2], [[1, 1, 1, 0], [1, 1, 1, 0.1], [1, 1, 1, 1], [1, 1, 1, 0]], [0.08], 1, 0, "", "", "",_angle];
 _gasLeak setParticleCircle [0, [0, 0, 0]];
 _gasLeak setDropInterval 0.1;
@@ -40,20 +38,32 @@ _gasClouds setParticleCircle [1, [0, 0, 0]];
 _gasClouds setDropInterval 0.1;
 
 
-private _root = parsingNamespace getVariable "MISSION_ROOT";
+
 
 [{
     params ["_args", "_handle"];
-    _args params ["_obj", "_gasLeak", "_gasClouds", "_root"];
+    _args params ["_obj", "_gasLeak", "_gasClouds"];
 
     
-	_obj say3D ["steam", 30];	
-
-
     if (missionNamespace getVariable ["grad_gas_leakClosed", false]) exitWith {
     	deleteVehicle _gasLeak;
     	deleteVehicle _gasClouds;
     	[_handle] call CBA_fnc_removePerFrameHandler;
     };
 
-},4.05,[_obj, _gasLeak, _gasClouds, _root]] call CBA_fnc_addPerFrameHandler;
+    if (!isNull _obj) then {
+        _obj say3D ["steam", 30];
+    };
+
+},4.05,[_obj, _gasLeak, _gasClouds]] call CBA_fnc_addPerFrameHandler;
+
+// delete sound
+[{
+     params ["_args", "_handle"];
+    _args params ["_obj"];
+
+    if (missionNamespace getVariable ["grad_gas_leakClosed", false]) exitWith {
+        deleteVehicle _obj;
+    };
+
+},0.5,[_obj]] call CBA_fnc_addPerFrameHandler;

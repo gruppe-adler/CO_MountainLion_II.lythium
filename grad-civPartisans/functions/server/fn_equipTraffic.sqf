@@ -12,4 +12,6 @@ params ["_vehicle", "_group"];
 
 { 
 	[_x, false] call GRAD_civPartisans_fnc_equip;
+    [_x] call GRAD_civPartisans_fnc_addKilledEH;
+    
 } forEach units _group;
