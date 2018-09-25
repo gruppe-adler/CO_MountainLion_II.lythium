@@ -6,7 +6,7 @@ if (!isServer) exitWith {};
     //make unit editable
     if([_group] isEqualTypeParams [grpNull])then{
         {
-            _x addCuratorEditableObjects [units _input, true];
+            _x addCuratorEditableObjects [units _group, true];
         } forEach (entities "moduleCurator_F");
     };
     
