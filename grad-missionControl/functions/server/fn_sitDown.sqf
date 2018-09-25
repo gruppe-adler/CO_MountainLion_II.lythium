@@ -4,6 +4,8 @@
 
 params ["_unit"];
 
+if (!isServer) exitWith {}; // we dont want to create 1mio logics
+
 private _group = group _unit;
 
 {

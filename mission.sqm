@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=53;
+		nextID=54;
 	};
 	class Camera
 	{
@@ -11154,7 +11154,7 @@ class Mission
 				};
 			};
 			id=1725;
-			atlOffset=0.21499634;
+			atlOffset=0.16430664;
 		};
 		class Item233
 		{
@@ -11171,7 +11171,7 @@ class Mission
 			};
 			id=1726;
 			type="LOP_ISTS_OPF_Static_M2";
-			atlOffset=0.21499634;
+			atlOffset=0.16430664;
 		};
 		class Item234
 		{
@@ -11359,13 +11359,12 @@ class Mission
 				angles[]={0,3.154892,0};
 			};
 			side="Empty";
-			flags=4;
 			class Attributes
 			{
 			};
 			id=1736;
 			type="Box_Syndicate_WpsLaunch_F";
-			atlOffset=0.0062561035;
+			atlOffset=2.9499512;
 			class CustomAttributes
 			{
 				class Attribute0
