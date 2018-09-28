@@ -74,15 +74,15 @@ private _protectingGoggles = [
 
 				"filmGrain" ppEffectEnable true;
 				"filmGrain" ppEffectAdjust [0.1, -1, 0.1, 0.05, 2, false];  
-				"filmGrain" ppEffectCommit 1; 
+				"filmGrain" ppEffectCommit 5; 
 
 				"colorCorrections" ppEffectEnable true; 
 				"colorCorrections" ppEffectAdjust [0.75, 1, 0, [0.8,0.9,1,-0.1], [1,0.5,0.2,1], [-0.5,0,-1,5]]; 
-				"colorCorrections" ppEffectCommit 2;
+				"colorCorrections" ppEffectCommit 5;
 
 				"dynamicBlur" ppEffectEnable true; // enables ppeffect
 				"dynamicBlur" ppEffectAdjust [2]; // intensity of blur
-				"dynamicBlur" ppEffectCommit 3; // time till vision is fully blurred
+				"dynamicBlur" ppEffectCommit 5; // time till vision is fully blurred
 					
 				enableCamShake true;	// enables camera shake
 				addCamShake [1, 7, 90];	// sets shakevalues
@@ -93,6 +93,13 @@ private _protectingGoggles = [
 
 				private _coughing = player getVariable ["GRAD_gas_coughingCounter",0];
 				private _inside = player getVariable ["GRAD_gas_insideCounter",0];
+
+				// if inside > 5, volume is still only reduced by 1
+				private _tfarVolume = [1 - (_inside/1), 1] select (_inside > 5);
+				player setVariable ["tf_globalVolume", _tfarVolume];
+				// post process emergency calls a bit
+				player setVariable ["tf_sendingDistanceMultiplicator", _tfarVolume + 0.1];
+
 
 				if (_inside > 5) then {
 					[player, true] call ace_medical_fnc_setUnconscious;

@@ -9,4 +9,8 @@
 "colorCorrections" ppEffectCommit 5;
 
 resetCamShake; // resets the shake
-3 fadeSound 1;	//fades the sound back to normal
+5 fadeSound 1;	//fades the sound back to normal
+
+// reset tfar
+player setVariable ["tf_globalVolume", 1];
+player setVariable ["tf_sendingDistanceMultiplicator", 1];
