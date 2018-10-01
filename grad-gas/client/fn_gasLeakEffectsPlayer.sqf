@@ -24,10 +24,10 @@ private _protectingGoggles = [
 // delete if necessary and flicker light
 [{
     params ["_args", "_handle"];
-    _args params ["_coughs", "_gas_breathing", "_protectingGoggles", "_pos", "_distance"];
+    _args params ["_coughs", "_gas_breathing", "_protectingGoggles", "_pos", "_distance", "_leakIdentifier"];
     
 
-    if (!alive player || missionNamespace getVariable ["grad_gas_leakClosed", false]) exitWith {
+    if (!alive player || missionNamespace getVariable [_leakIdentifier, false]) exitWith {
     	[] call grad_gas_fnc_gasEffectsReset;
     	[_handle] call CBA_fnc_removePerFrameHandler;
     };
@@ -41,7 +41,7 @@ private _protectingGoggles = [
 			if (player getVariable ["grad_gas_isGasEffected", false]) then {
 				player setVariable ["grad_gas_isGasEffected", false];
 				player setVariable ["GRAD_gas_insideCounter",0];
-				[] call grad_fx_fnc_gasEffectsReset;
+				[] call grad_gas_fnc_gasEffectsReset;
 			};
 			
 		
@@ -55,13 +55,6 @@ private _protectingGoggles = [
 				 player setVariable ["GRAD_gas_breathingCounter",_breathing];
 			};
 
-
-			if (!(player getVariable ["player_has_gasmask",false])) then {
-				player setVariable ["player_has_gasmask",true];
-				GASMASK_FOUND = true; 
-				publicVariableServer "GASMASK_FOUND";
-			};
-
 	} else {
 			cutRsc ["Default", "PLAIN"];
 
@@ -69,8 +62,6 @@ private _protectingGoggles = [
 
 				player setVariable ["grad_gas_isGasEffected", true];
 
-				GAS_EFFECTED = GAS_EFFECTED + 1;
-				publicVariableServer "GAS_EFFECTED";
 
 				"filmGrain" ppEffectEnable true;
 				"filmGrain" ppEffectAdjust [0.1, -1, 0.1, 0.05, 2, false];  
@@ -125,4 +116,4 @@ private _protectingGoggles = [
 			};
 	};
 
-},1,[_coughs, _gas_breathing, _protectingGoggles, _pos, _distance]] call CBA_fnc_addPerFrameHandler;
+},1,[_coughs, _gas_breathing, _protectingGoggles, _pos, _distance, _leakIdentifier]] call CBA_fnc_addPerFrameHandler;
