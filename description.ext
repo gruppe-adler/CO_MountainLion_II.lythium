@@ -4,9 +4,9 @@ author = "Nomisum for Gruppe Adler";  //appears as author in overview and loadin
 
 enableDebugConsole = 1;
 
+respawnDelay = 240;
 respawn = 3;
-respawnDelay = 9999;
-respawnTemplates[] = {"Base"};
+respawnTemplates[] = { "Counter" };
 respawnOnStart = -1;//Dont respawn on start.
 respawnDialog = 0;
 respawnButton = 0;

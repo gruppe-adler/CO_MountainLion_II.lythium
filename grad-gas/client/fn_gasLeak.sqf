@@ -2,6 +2,8 @@ params ["_obj", "_angle"];
 
 private ["_gasLeak", "_gasClouds", "_radius"];
 
+if (player call BIS_fnc_isCurator) exitWith {};
+
 _radius = 7;
 
 /*
