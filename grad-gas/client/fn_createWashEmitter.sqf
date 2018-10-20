@@ -1,9 +1,9 @@
-params ["_position", "_lifetime", ["_intensity",5], ["_uplift", 0.005], ["_rgb", [0.1,0.05,0.025]], ["_transparency",1]];
+params ["_position", "_lifetime", ["_intensity",5], ["_uplift", 0.001], ["_rgb", [0.1,0.05,0.025]], ["_transparency",1]];
 _rgb params ["_colorR", "_colorG", "_colorB"];
 
 private _grad_dust = "#particlesource" createVehicleLocal _position; 
 
-private _interval = 0.01;
+private _interval = 0.5;
 private _duration = 1;
 
 /* _grad_dust setParticleCircle [10, [0, 0, 0]]; */

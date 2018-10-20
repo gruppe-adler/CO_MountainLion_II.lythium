@@ -96,7 +96,7 @@ if (
 
   }] call Ares_fnc_RegisterCustomModule;
 
-
+  /*
 
   ["ZEUS HELPERS", "Spawn Enemy inside Building",
   {
@@ -119,25 +119,7 @@ if (
 
   }] call Ares_fnc_RegisterCustomModule;
 
-  ["ZEUS HELPERS", "Spawn Reinforcement Truck",
-  {
-    // Get all the passed parameters
-    params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
-
-    
-    [_position] call GRAD_missionControl_fnc_createTruckReinforcements;
-
-  }] call Ares_fnc_RegisterCustomModule;
-
-  ["ZEUS HELPERS", "Spawn Sheep Truck",
-  {
-    // Get all the passed parameters
-    params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
-
-     [_position] call GRAD_herding_fnc_createSheepTruck;
-
-  }] call Ares_fnc_RegisterCustomModule;
-
+  */
   /*
   ["ZEUS HELPERS", "Spawn Barrel Truck",
   {
@@ -149,31 +131,7 @@ if (
   }] call Ares_fnc_RegisterCustomModule;
   */
 
-  ["ZEUS HELPERS", "Spawn Shepherd",
-  {
-    // Get all the passed parameters
-    params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
-
-     private _group = createGroup civilian;
-     private _unit = _group createUnit ["C_Man_1", _position, [], 0, "NONE"];
-     [_unit, false] call GRAD_civPartisans_fnc_equip;
-     _unit setCombatMode "BLUE";
-     _unit setBehaviour "CARELESS";
-     _unit setSpeedMode "LIMITED";
-     _unit allowFleeing 0;
-
-     [_position, 20, _unit, "Sheep_random_F"] call GRAD_herding_fnc_create;
-
-  }] call Ares_fnc_RegisterCustomModule;
-
-  ["ZEUS HELPERS", "Shepherd Phone",
-  {
-    // Get all the passed parameters
-    params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
-
-     [_objectUnderCursor] call GRAD_herding_fnc_phoneThem;
-
-  }] call Ares_fnc_RegisterCustomModule;
+  
 
 
   ["ZEUS HELPERS", "Alert enemy AI around here",
@@ -209,6 +167,17 @@ if (
 
   }] call Ares_fnc_RegisterCustomModule;
 
+  ["ML2", "Explosion IED LAB",
+  {
+    // Get all the passed parameters
+    params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
+
+    // [cursorObject, 10, false] call GRAD_gas_fnc_explosionServer;
+    [ML2_gasTank, 15, true] remoteExec ["GRAD_gas_fnc_explosionServer", 2];
+
+  }] call Ares_fnc_RegisterCustomModule;
+
+  /*
   ["ZEUS HELPERS", "Civ OFF",
   {
     // Get all the passed parameters
@@ -226,7 +195,11 @@ if (
     civpresence_module setVariable ["#active", true, true];
 
   }] call Ares_fnc_RegisterCustomModule;
+  */
 
+
+
+  /*
   ["ATAKA", "Show List of DIE & SPECTATE Players",
   {
     // Get all the passed parameters
@@ -237,6 +210,7 @@ if (
     ["AllSpectators", [_stringify]] call bis_fnc_showNotification;
 
   }] call Ares_fnc_RegisterCustomModule;
+  */
 
   ["ATAKA", "Force Respawn everyone here",
   {
@@ -254,7 +228,7 @@ if (
     params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
 
     
-    private _count = count (playableUnits + switchableUnits) + 1;
+    private _count = count (playableUnits + switchableUnits) + 2;
     
     // possible chairs
     private _chairs = ["Land_CampingChair_V1_F", _position, _count] call GRAD_missionControl_fnc_createChairCircle;

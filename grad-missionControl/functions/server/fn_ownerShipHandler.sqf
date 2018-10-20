@@ -10,12 +10,6 @@ if (!isServer) exitWith {};
         } forEach (entities "moduleCurator_F");
     };
 
-    
-    // store loadout in variable to reapply if loadout bug kicks in
-    {
-      	_x setVariable ["GRAD_missionControl_loadoutCache", getUnitLoadout _x];
-    } forEach units _group;
-
 
     // change owner to server
     _group setGroupOwner 2;
@@ -25,9 +19,10 @@ if (!isServer) exitWith {};
    	[{
    		params ["_group"];
 
+        // setunitloadout class as a fallback, if unit is naked
     	{
     		if ((uniform _x) isEqualTo "") then {
-    			_x setUnitLoadout (_x getVariable ["GRAD_missionControl_loadoutCache", typeOf _x]); // you can also setunitloadout class as a fallback
+    			_x setUnitLoadout (typeOf _x);
     		};
     	} forEach units _group;
     }, [_group], 3] call CBA_fnc_waitAndExecute;

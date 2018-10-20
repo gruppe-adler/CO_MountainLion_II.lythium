@@ -8,7 +8,7 @@
 params ["_position", ["_lifetime", 300], ["_size",10], ["_rgb", [0.3,0.25,0.2]], ["_transparency",1]];
 _rgb params ["_colorR", "_colorG", "_colorB"];
 
-private _interval = 0.01;
+private _interval = 0.5;
 private _duration = 1;
 
 private _grad_linger = "#particlesource" createVehicleLocal _position;

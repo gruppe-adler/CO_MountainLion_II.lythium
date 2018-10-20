@@ -7,7 +7,10 @@
 
 params ["_object", "_name", ["_duration",12]];
 
+if (isNull _object) exitWith {};
+
 _object setVariable ["Intel_Identifier", _name, true];
+
 
 [
 	_object,											// Object the action is attached to
@@ -22,7 +25,7 @@ _object setVariable ["Intel_Identifier", _name, true];
 	{},													// Code executed on interrupted
 	[],													// Arguments passed to the scripts as _this select 3
 	_duration,													// Action duration [s]
-	0,													// Priority
+	1000,													// Priority
 	true,												// Remove on completion
 	false												// Show in unconscious state 
 ] remoteExec ["BIS_fnc_holdActionAdd", 0, _object];	// MP compatible implementation

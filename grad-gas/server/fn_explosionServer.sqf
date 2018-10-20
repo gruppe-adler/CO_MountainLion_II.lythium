@@ -21,15 +21,14 @@ missionNamespace setVariable ["grad_gas_leakClosed", true, true];
 
 
 private _secondary = "ammo_Missile_Cruise_01" createVehicle _destructionCenter;
-_secondary setDamage 1;
 
 /*
 destroy nearest things / throw them in the air
 */
 [_obj, _destructionCenter, _radius] remoteExec ["GRAD_gas_fnc_explosionClient", [0,-2] select isDedicated];
 
-[_destructionCenter, _radius, _deleteEverything] spawn {
-    params ["_destructionCenter", "_radius", "_deleteEverything"];
+[_secondary, _destructionCenter, _radius, _deleteEverything] spawn {
+    params ["_secondary", "_destructionCenter", "_radius", "_deleteEverything"];
 
     private _vegetation = nearestTerrainObjects [_destructionCenter, ["TREE","SMALL TREE","BUSH"],2*_radius];
     private _buildings = _destructionCenter nearObjects ["building",1.5*_radius];
@@ -43,7 +42,6 @@ destroy nearest things / throw them in the air
     _things = _things - _thingsX;
     {
         if (random 1 > 0.5) then {
-                [_x, [0,0,0], 300 + random 50, .0005, .5] remoteExec ["GRAD_gas_fnc_createGlow", [0,-2] select isDedicated];
                 _x setVelocity [random 10-random 20,random 10-random 20,30+random 10];
             
         } else {
@@ -52,11 +50,12 @@ destroy nearest things / throw them in the air
         sleep 0.001;
     } foreach _things;
 
+
+
     {  
         if (random 1 > 0.5) then {
                 private _helper = "Land_PenBlack_F" createVehicle (position _x);
                 _x attachTo [_helper];
-                [_x, [0,0,0], 300 + random 50, .0005, .5] remoteExec ["GRAD_gas_fnc_createGlow", [0,-2] select isDedicated];
                 _helper setVelocity [random 10-random 20,random 10-random 20,30+random 10];
         } else {
             deleteVehicle _x;
@@ -66,7 +65,6 @@ destroy nearest things / throw them in the air
 
     {   
         _x setVelocity [random 5-random 10,random 5-random 10,15+random 15]; 
-        /*[_x, 0.9, "body", "explosive"] call ace_medical_fnc_addDamageToUnit;*/
         [_x, true] call ace_medical_fnc_setUnconscious;
         sleep 0.001
     } foreach _men;
@@ -74,7 +72,6 @@ destroy nearest things / throw them in the air
     {
         private _helper = "Land_PenBlack_F" createVehicle (position _x);
         _x attachTo [_helper];
-        [_x, [0,0,0], 300 + random 50, .0005, .5] remoteExec ["GRAD_gas_fnc_createGlow", [0,-2] select isDedicated];
         _helper setVelocity [random 1-random 2,random 1-random 2,3+random 2]; 
     } foreach _cars + _wrecks;
 
@@ -92,6 +89,8 @@ destroy nearest things / throw them in the air
     };    
 
     {_x setDamage 1;} foreach _vegetation;
+
+    _secondary setDamage 1;
 
     "test_EmptyObjectForFireBig" createVehicle _destructionCenter;
 };

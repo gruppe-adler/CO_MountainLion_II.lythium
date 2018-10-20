@@ -9,6 +9,8 @@ if (!(_intel isEqualTo "")) then {
      private _currentIntelCount = missionNamespace getVariable ["ML_intelCount", 0];
      missionNamespace setVariable ["ML_intelFound", _currentIntelFound + 1, true];
 
+     [_object, "AinjPpneMstpSnonWrflDnon"] remoteExec ["switchMove", 0, true];
+
      diag_log format ["intel found. %1 intel out there, %2 found", _currentIntelCount, _currentIntelFound];
 } else {
 	hint "nothing found";
