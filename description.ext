@@ -185,6 +185,13 @@ class cfgMusic {
 	  sound[]={"audio\openingbook.ogg", 1, 1};
 	  titles[]={};
 	};
+
+  class outro
+  {
+    name="outro";
+    sound[]={"audio\outro.ogg", 1, 1};
+    titles[]={};
+  };  
 };
 
 class CfgIdentities
@@ -209,7 +216,7 @@ class CfgGradCivs {
     spawnDistancesOnFoot[] = {2000,4000};
     spawnDistancesInVehicles[] = {2000,4000};
     debugMode = 0;
-    exitOn = "";
+    exitOn = "missionNamespace getVariable ['STOP_CIVS', false]";
     onSpawn = "[_this select 0] call GRAD_civPartisans_fnc_addKilledEH;";
     onHeldUp = "";
     backpackProbability = 0.1;

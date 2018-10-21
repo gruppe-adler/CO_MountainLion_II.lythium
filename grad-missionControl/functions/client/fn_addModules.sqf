@@ -77,7 +77,7 @@ if (
 
 
 
-  ["ZEUS HELPERS", "Briefing Done",
+  ["ML MISSION", "Briefing Done",
   {
     // Get all the passed parameters
     params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
@@ -86,7 +86,7 @@ if (
 
   }] call Ares_fnc_RegisterCustomModule;
 
-  ["ZEUS HELPERS", "Intro Fly Music",
+  ["ML MUSIC", "Intro Fly Music",
   {
     // Get all the passed parameters
     params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
@@ -96,6 +96,34 @@ if (
 
   }] call Ares_fnc_RegisterCustomModule;
   
+
+  ["ML MISSION", "Unit Counts",
+  {
+    // Get all the passed parameters
+    params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
+
+     private _allCuratorUnits = [];
+      {
+        _allCuratorUnits pushback (getAssignedCuratorUnit _x);
+      } forEach allCurators;
+
+
+      private _west = west countSide allUnits;
+      private _east = east countSide allUnits;
+      private _civilian = civilian countSide allUnits;
+      private _logic = sideLogic countSide allUnits;
+      private _total = _west + _east + _civilian + _logic;
+
+      private _string = str (parseText format ["unitcounts:<br/>
+         west: %1<br/>
+         east: %2<br/>
+         civ: %3<br/>
+         logic: %4<br/>
+         total: %5", 
+      _west,_east,_civilian,_logic,_total]);
+      [_string] remoteExec ["systemChat", _allCuratorUnits, true];
+
+  }] call Ares_fnc_RegisterCustomModule;
 
 
   ["ZEUS HELPERS", "Alert enemy AI around here",
@@ -121,17 +149,17 @@ if (
   }] call Ares_fnc_RegisterCustomModule;
 
 
-  ["ZEUS HELPERS", "Outro Music",
+  ["ML MUSIC", "Outro Music",
   {
     // Get all the passed parameters
     params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
 
     [5, 1] remoteExec ["fadeMusic"];
-    ["LeadTrack01_F_Curator"] remoteExec ["playMusic"];
+    ["outro"] remoteExec ["playMusic"];
 
   }] call Ares_fnc_RegisterCustomModule;
 
-  ["ML2", "Explosion IED LAB",
+  ["ML FX", "Explosion IED LAB",
   {
     // Get all the passed parameters
     params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
@@ -143,7 +171,7 @@ if (
 
   
 
-  ["ATAKA", "Force Respawn everyone here",
+  ["ML MISSION", "Force Respawn everyone here",
   {
     // Get all the passed parameters
     params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];

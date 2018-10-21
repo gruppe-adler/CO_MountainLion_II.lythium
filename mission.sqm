@@ -8,7 +8,7 @@ class EditorData
 	toggles=5;
 	class ItemIDProvider
 	{
-		nextID=2387;
+		nextID=2392;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={12211.491,377.31387,17963.846};
-		dir[]={-0.8833608,-0.46146238,0.082461335};
-		up[]={-0.45948204,0.88715148,0.042890765};
-		aside[]={0.092948228,-1.5783007e-007,0.99570662};
+		pos[]={12167.284,383.32437,18025.135};
+		dir[]={0.79845095,-0.56782323,0.20020412};
+		up[]={0.55078024,0.82314444,0.13810246};
+		aside[]={0.24321517,4.0730811e-007,-0.96998596};
 	};
 };
 binarizationWanted=0;
@@ -17023,7 +17023,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="pic\satphoto2.jpg, pic\stash_1.jpg, pic\stash_2.jpg, pic\stash_3.jpg";
+							value="pic\satphoto.paa, pic\stash_1.jpg, pic\stash_2.jpg, pic\stash_3.jpg";
 						};
 					};
 				};
@@ -19784,7 +19784,7 @@ class Mission
 			side="West";
 			class Entities
 			{
-				items=6;
+				items=8;
 				class Item0
 				{
 					dataType="Object";
@@ -20254,6 +20254,164 @@ class Mission
 										};
 									};
 									value=0.94999999;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+				class Item6
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12216.349,341.95145,18059.369};
+						angles[]={-0,2.9451525,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Rifleman";
+						isPlayable=1;
+					};
+					id=2391;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male06ENG";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.95999998;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+				class Item7
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12217.264,341.95145,18060.662};
+						angles[]={-0,2.9451525,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Rifleman";
+						isPlayable=1;
+					};
+					id=2389;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male06ENG";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.95999998;
 								};
 							};
 						};
