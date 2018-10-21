@@ -23,11 +23,20 @@ _unit addEventHandler ["Killed", {
 
         if (random 10 > 9.5) then {
 
-            private _currentIntelCount = missionNamespace getVariable ["ML_intelCount", 0];
-            missionNamespace setVariable ["ML_intelCount", _currentIntelCount + 1, true];
+            private _currentIntelCount = (missionNamespace getVariable ["ML_intelCount", 0]) + 1;
+            missionNamespace setVariable ["ML_intelCount", _currentIntelCount, true];
             _intel = selectRandom ["<img image='pic\intel_i.jpg' />", "<img image='pic\intel_ii.jpg' />", "<img image='pic\intel_iii.jpg' />"];
 
-            diag_log format ["adding intel number %1", (_currentIntelCount + 1)];
+            diag_log format ["adding intel number %1", _currentIntelCount];
+
+            private _allCuratorUnits = [];
+            {
+                _allCuratorUnits pushback (getAssignedCuratorUnit _x);
+            } forEach allCurators;
+
+            [format ["intel spawned number %1", _currentIntelCount]] remoteExec ["systemChat", _allCuratorUnits, true];
+
+
         };
 
         [_unit, _intel, 5] call GRAD_missionControl_fnc_addIntel;
