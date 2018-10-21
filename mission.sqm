@@ -8,7 +8,7 @@ class EditorData
 	toggles=5;
 	class ItemIDProvider
 	{
-		nextID=2386;
+		nextID=2387;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=61;
+		nextID=62;
 	};
 	class Camera
 	{
-		pos[]={12167.203,420.16638,18050.959};
-		dir[]={0.53460073,-0.68843043,-0.49020952};
-		up[]={0.50740647,0.72530425,-0.46527311};
-		aside[]={-0.67585665,5.8265869e-008,-0.73706025};
+		pos[]={12211.491,377.31387,17963.846};
+		dir[]={-0.8833608,-0.46146238,0.082461335};
+		up[]={-0.45948204,0.88715148,0.042890765};
+		aside[]={0.092948228,-1.5783007e-007,0.99570662};
 	};
 };
 binarizationWanted=0;
@@ -112,13 +112,14 @@ addons[]=
 	"A3_Misc_F_Helpers",
 	"A3_Structures_F_Heli_VR_Helpers",
 	"Desert",
-	"A3_Characters_F_Mark"
+	"A3_Characters_F_Mark",
+	"A3_Supplies_F_Heli_Bladders"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=64;
+		items=65;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -528,6 +529,13 @@ class AddonsMetaData
 		{
 			className="A3_Characters_F_Mark";
 			name="Arma 3 Marksmen - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item64
+		{
+			className="A3_Supplies_F_Heli";
+			name="Arma 3 Helicopters - Ammoboxes and Supplies";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -3617,7 +3625,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=457;
+		items=458;
 		class Item0
 		{
 			dataType="Marker";
@@ -20290,6 +20298,22 @@ class Mission
 			};
 			title="Lifter";
 			id=2384;
+		};
+		class Item457
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={12056,342.7648,17873.75};
+				angles[]={-0,0.64325875,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2386;
+			type="StorageBladder_01_fuel_sand_F";
 		};
 	};
 };
