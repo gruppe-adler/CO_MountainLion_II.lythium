@@ -22,4 +22,5 @@ if (!(_intel isEqualTo "")) then {
 
 } else {
 	hint "nothing found";
+  [_object, "AinjPpneMstpSnonWrflDnon"] remoteExec ["switchMove", 0, true];
 };
